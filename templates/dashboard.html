@@ -1,0 +1,54 @@
+<!-- dashboard.html -->
+{% extends "base.html" %}
+
+{% block title %}Dashboard - SaaS App{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Welcome, {{ current_user.username }}!</h2>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Profile Information</h5>
+                <p class="card-text">
+                    <strong>Username:</strong> {{ current_user.username }}<br>
+                    <strong>Email:</strong> {{ current_user.email }}<br>
+                    <strong>Phone:</strong> {{ current_user.phone_number }}
+                </p>
+                <a href="{{ url_for('edit_profile') }}" class="btn btn-primary">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-8 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Dashboard Overview</h5>
+                <p class="card-text">
+                    This is where you can display important information, statistics, or features of your SaaS application. Customize this section based on your specific app's functionality.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Recent Activity</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Sample activity 1</li>
+                    <li class="list-group-item">Sample activity 2</li>
+                    <li class="list-group-item">Sample activity 3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="{{ url_for('cancel_account') }}" class="btn btn-danger">Cancel Account</a>
+</div>
+{% endblock %}

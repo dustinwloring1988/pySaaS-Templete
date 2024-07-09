@@ -1,0 +1,24 @@
+<!-- cancel_account.html -->
+{% extends "base.html" %}
+
+{% block title %}Cancel Account - SaaS App{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="mb-4">Cancel Account</h2>
+        <div class="alert alert-danger">
+            <h4 class="alert-heading">Warning!</h4>
+            <p>You are about to cancel your account. This action cannot be undone.</p>
+        </div>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="confirm" class="form-label">To confirm, please type "CANCEL" in the box below:</label>
+                <input type="text" class="form-control" id="confirm" name="confirm" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Cancel Account</button>
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Go Back</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

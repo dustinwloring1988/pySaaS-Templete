@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=saas_app
+      - POSTGRES_USER=saas_user
+      - POSTGRES_PASSWORD=saas_password
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
